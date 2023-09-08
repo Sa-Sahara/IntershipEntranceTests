@@ -1,4 +1,4 @@
-package tasks.task3;
+package internship.task3;
 
 import java.util.Arrays;
 import java.util.Scanner;

@@ -1,9 +1,8 @@
-package tasks.task5;
+package internship.task5;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import tasks.task5.Ghost;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

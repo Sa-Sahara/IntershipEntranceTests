@@ -1,4 +1,4 @@
-package tasks.task6;
+package internship.task6;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

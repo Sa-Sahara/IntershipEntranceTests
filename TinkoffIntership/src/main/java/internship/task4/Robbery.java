@@ -1,4 +1,4 @@
-package tasks.task4;
+package internship.task4;
 
 import java.util.*;
 

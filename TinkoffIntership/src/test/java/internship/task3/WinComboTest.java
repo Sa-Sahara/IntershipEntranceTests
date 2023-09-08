@@ -1,4 +1,4 @@
-package tasks.task4;
+package internship.task3;
 
 import org.junit.After;
 import org.junit.Before;
@@ -11,7 +11,7 @@ import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
 
-public class RobberyTest {
+public class WinComboTest {
     private final InputStream originalIn = System.in;
     private final PrintStream originalOut = System.out;
 
@@ -33,58 +33,55 @@ public class RobberyTest {
     }
 
     @Test
-    public void test1() {
+    public void testExpectNo1() {
         // Define the input for the test case
-        String input = "5\n 2\n" +
-                "1 2\n";
+        String input = "5\n" +
+                "1 4 2 2 4\n" +
+                "1 4 4 2 2\n";
 
         // Redirect standard input to the test input
         testIn = new ByteArrayInputStream(input.getBytes());
         System.setIn(testIn);
 
-        // Call the main method of the Robbery class
-        Robbery.main(null);
+        // Call the main method of the WinCombo class
+        WinCombo.main(null);
 
         // Capture the output
         String output = testOut.toString().trim();
 
         // Assert that the output matches the expected output
-        String expectedOutput = "3\r\n" +
-                "1 2 2";
-        assertEquals(expectedOutput, output);
+        assertEquals("NO", output);
     }
 
     @Test
-    public void test2() {
-        // Define the input for the test case
-        String input = "7\n 2\n" +
-                "1 2\n";
+    public void testExpectNo2() {
+        String input = "3\n" +
+                "4 1 2\n" +
+                "1 4 7\n";
 
         testIn = new ByteArrayInputStream(input.getBytes());
         System.setIn(testIn);
 
-        Robbery.main(null);
+        WinCombo.main(null);
 
         String output = testOut.toString().trim();
 
-        String expectedOutput = "-1";
-        assertEquals(expectedOutput, output);
+        assertEquals("NO", output);
     }
 
     @Test
-    public void test3() {
-        // Define the input for the test case
-        String input = "5\n 2\n" +
-                "3 4\n";
+    public void testExpectYes() {
+        String input = "6\n" +
+                "5 1 2 5 3 5\n" +
+                "5 1 2 3 5 5\n";
 
         testIn = new ByteArrayInputStream(input.getBytes());
         System.setIn(testIn);
 
-        Robbery.main(null);
+        WinCombo.main(null);
 
         String output = testOut.toString().trim();
 
-        String expectedOutput = "-1";
-        assertEquals(expectedOutput, output);
+        assertEquals("YES", output);
     }
 }

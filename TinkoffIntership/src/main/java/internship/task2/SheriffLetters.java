@@ -1,4 +1,4 @@
-package tasks.task2;
+package internship.task2;
 
 import java.util.Scanner;
 
