@@ -25,7 +25,10 @@ public class Robbery {
 
             if (findCombination(0, sum, notes, combination)){
                 System.out.println(combination.size());
-                System.out.println(combination);
+                for (long l :
+                        combination) {
+                    System.out.print(l + " ");
+                }
             } else {
                 System.out.println(-1);
             }
