@@ -38,8 +38,8 @@ public class Ghost {
             int v = edge.v;
             long w = edge.w;
 
-            int pu = find(parent, u);
-            int pv = find(parent, v);
+            int pu = root(parent, u);
+            int pv = root(parent, v);
 
             if (pu != pv) {
                 parent[pu] = pv;
@@ -51,11 +51,12 @@ public class Ghost {
         System.out.println(maxWeight - 1);
     }
 
-    static int find(int[] parent, int node) {
-        if (node != parent[node]) {
-            parent[node] = find(parent, parent[node]);
+    static int root(int[] parent, int node) {
+        while (node != parent[node]){
+            parent[node] = parent[parent[node]];
+            node = parent[node];
         }
-        return parent[node];
+        return node;
     }
 
     static class Edge {
